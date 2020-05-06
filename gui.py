@@ -5,7 +5,7 @@ class iug(tk.Frame):
     def __init__(self, window):
         super().__init__(window)
         window.title('Lab 2')
-        window.geometry('600x690')
+        window.geometry('600x750')
         # window.resizable(False, False)
         s = ttk.Style()
         s.configure('TNotebook.Tab', font = ('Arial', '11', 'italic'))
@@ -31,7 +31,9 @@ class iug(tk.Frame):
         self.mac = tk.Label(self.layer1, text = 'MAC адрес:', font = 'Arial 13')
         self.macInfo = tk.Label(self.layer1, text = '', font = 'Arial 13')
         self.netcard = tk.Label(self.layer1, text = 'Информация о сетевой плате:', font = 'Arial 13')
-        self.netcardInfo = tk.Label(self.layer1, text = '', font = 'Arial 13')
+        self.netcardInfo = tk.Label(self.layer1, text = '', font = 'Arial 13', width = 35)
+        self.registryInfo = tk.Label(self.layer1, text = 'Путь к сетевой карте', font = 'Arial 13')
+        self.registryPath = tk.Entry(self.layer1, font = 'Arial 13', width = 60)
 
         self.ipconfig.grid(row = 0, column = 0, padx = 5, pady = 5)
         self.ipInfo.grid(row = 1, column = 1, padx = 5, pady = 5)
@@ -41,6 +43,8 @@ class iug(tk.Frame):
         self.macInfo.grid(row = 2, column = 1, sticky = 'nsew', padx = 10, pady = 5)
         self.netcard.grid(row = 3, column = 0, sticky = 'nsew', padx = 10, pady = 5)
         self.netcardInfo.grid(row = 3, column = 1, sticky = 'nsew', padx = 10, pady = 5)
+        self.registryInfo.grid(row = 4, column = 0, padx = 10, pady = 5 )
+        self.registryPath.grid(row = 5, column = 0, columnspan = 2, pady = 5, padx = 10, sticky = 'nsew')
 
         # Вторая вкладка, поля для ввода сайта\ip, поля для трассировки и пинга
 
